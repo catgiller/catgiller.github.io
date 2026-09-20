@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>paw.log — Erva's technical blog</title>
+<meta name="description" content="A personal technical blog about Linux, C++, cybersecurity and whatever else breaks along the way.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="paw" viewBox="0 0 24 24">
+    <ellipse cx="12" cy="15.6" rx="5.6" ry="4.6"/>
+    <ellipse cx="5.3" cy="9.2" rx="2.15" ry="2.7" transform="rotate(-22 5.3 9.2)"/>
+    <ellipse cx="10.1" cy="5.6" rx="2" ry="2.55" transform="rotate(-8 10.1 5.6)"/>
+    <ellipse cx="14.9" cy="5.5" rx="2" ry="2.55" transform="rotate(8 14.9 5.5)"/>
+    <ellipse cx="19.1" cy="9.2" rx="2.15" ry="2.7" transform="rotate(22 19.1 9.2)"/>
+  </symbol>
+</svg>
+
+<header class="site-head">
+  <div class="head-inner">
+    <a href="#/" class="logo"><svg class="paw-icon"><use href="#paw"></use></svg>paw<span class="accent">.log</span></a>
+    <nav class="site-nav" id="siteNav">
+      <a href="#/" data-route="/">Home</a>
+      <a href="#/blog" data-route="/blog">Blog</a>
+      <a href="#/about" data-route="/about">About</a>
+      <a href="#/projects" data-route="/projects">Projects</a>
+    </nav>
+  </div>
+</header>
+
+<main id="app"></main>
+
+<footer class="site-foot">
+  <div class="foot-inner">
+    <div class="foot-brand">
+      <a href="#/" class="logo"><svg class="paw-icon"><use href="#paw"></use></svg>paw<span class="accent">.log</span></a>
+      <p class="foot-tag">A developer's field notes, with occasional cat hair. Linux, C++, cybersecurity and whatever breaks next.</p>
+    </div>
+    <div class="foot-links">
+      <a href="#">GitHub</a>
+      <a href="#">Email</a>
+      <a href="#/projects" data-route="/projects">Projects</a>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <svg class="paw-icon" style="color:var(--text-faint);width:12px;height:12px;"><use href="#paw"></use></svg>
+    <span>© 2026 Erva. Built by hand, one segfault at a time.</span>
+  </div>
+</footer>
+
+<script src="js/utils.js"></script>
+<script src="js/data.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
