@@ -171,14 +171,12 @@ function renderProjects(){
         <span class="pill">Hackathon</span>
         <h3>Earthquake Early-Warning Concept</h3>
         <p>Exploring whether physical precursor signals from fault zones can be sensed faster than current seismology, using fiber-optic cable as a sensor network. In progress for the Greece–Türkiye 2026 hackathon.</p>
-        <a href="#/post/earthquake-early-warning" class="readmore">Read the post</a>
       </div>
 
       <div class="proj-card">
         <span class="pill">C++</span>
         <h3>42 Core Curriculum</h3>
         <p>Working through 42's C++ modules, including the Zombie exercise series — memory management, pointer syntax, and constructor design, rebuilt as intuition rather than memorized rules.</p>
-        <a href="#/post/stack-vs-heap" class="readmore">Read the post</a>
       </div>
     </section>
   `;
