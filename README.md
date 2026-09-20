@@ -6,33 +6,93 @@ A personal technical blog about Linux, C++, cybersecurity and whatever else brea
 
 ```
 .
-├── index.html        # page shell (head, header, footer)
+├── index.html          # page shell (head, header, footer)
 ├── css/
-│   └── style.css     # all styles
+│   └── style.css       # all styles
 ├── js/
-│   ├── utils.js      # escaping + syntax highlighting
-│   ├── data.js       # posts + SVG diagrams
-│   └── app.js        # views, router, event handlers
+│   ├── utils.js        # escaping + syntax highlighting
+│   ├── diagrams.js     # SVG diagrams used in posts
+│   ├── data.js         # GENERATED — do not edit by hand
+│   └── app.js          # views, router, event handlers
+├── posts/              # your posts, one Markdown file each
+│   ├── _template.md    # copy this to start a new post
+│   └── ...
+├── scripts/
+│   ├── build.js        # markdown -> js/data.js
+│   └── new.js          # scaffold a new post
+├── package.json
 └── README.md
 ```
 
-## Adding a post
+## Writing a post
 
-Posts live in `js/data.js` as objects in the `posts` array:
+Posts are plain Markdown files in `posts/`. Create one with:
 
-```js
-{
-  slug:'my-new-post',
-  title:'A Post Title',
-  category:'C++',
-  date:'September 20, 2026',
-  readTime:'5 min read',
-  excerpt:'A short summary shown on the card.',
-  content:`<p>Your HTML content here…</p>`
-}
+```bash
+npm run new my-post-slug
 ```
 
-The `content` field is raw HTML. Use `hl(\`code\`, 'cpp')` for syntax-highlighted code blocks and the built-in diagram SVGs (`polybiusSVG`, `stackHeapSVG`) where needed.
+or copy `posts/_template.md`. Each file starts with a metadata block:
+
+```md
+---
+slug: my-post-slug
+title: A Post Title
+category: Linux
+date: September 20, 2026
+readTime: 5 min read
+excerpt: A short summary shown on the card.
+---
+
+Write the body in Markdown:
+
+## A section
+
+Paragraph with `inline code` and **bold**.
+
+- a bullet
+- another bullet
+
+> A blockquote.
+
+| Col A | Col B |
+| ----- | ----- |
+| x     | y     |
+```
+
+### Code blocks
+
+Fenced code blocks get syntax highlighting. The first word is the language (`cpp`, `bash`, `conf`); anything after it becomes the file label:
+
+````md
+```cpp
+int main() { return 0; }
+```
+
+```conf — UserKeybinds.conf
+bind = SUPER, RETURN, exec, kitty
+```
+````
+
+### Diagrams
+
+Use the `:::diagram` directive to drop in one of the SVGs defined in `js/diagrams.js`:
+
+```md
+:::diagram stackHeapSVG
+A caption describing the diagram.
+:::
+```
+
+## Building
+
+After editing a post, regenerate `js/data.js`:
+
+```bash
+npm run build
+```
+
+`js/data.js` is committed to the repo, so GitHub Pages needs no build step — just commit and push.
 
 ## Live site
 
