@@ -165,7 +165,6 @@ function renderProjects(){
         <span class="pill">Cybersecurity</span>
         <h3>42 Kocaeli Cybersecurity Club</h3>
         <p>Founded and organized the school's first cybersecurity club, including a five-station cipher scavenger hunt as our opening event, built around ciphers people could crack by hand or with tools like CyberChef.</p>
-        <a href="#/post/cipher-scavenger-hunt" class="readmore">Read the post</a>
       </div>
 
       <div class="proj-card">

@@ -1,25 +1,5 @@
 /* ---------------- diagrams ---------------- */
 
-const polybiusSVG = `
-<svg class="diagram" viewBox="0 0 320 320" role="img" aria-label="Classic Polybius square, five by five grid of letters">
-  ${(function(){
-    const rows=[['A','B','C','D','E'],['F','G','H','I/J','K'],['L','M','N','O','P'],['Q','R','S','T','U'],['V','W','X','Y','Z']];
-    let out='';
-    for(let i=0;i<5;i++){
-      out+='<text x="'+(68+56*i)+'" y="26" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono, monospace" font-size="15">'+(i+1)+'</text>';
-      out+='<text x="26" y="'+(68+56*i+5)+'" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono, monospace" font-size="15">'+(i+1)+'</text>';
-    }
-    for(let r=0;r<5;r++){
-      for(let c=0;c<5;c++){
-        const x=40+56*c, y=40+56*r;
-        out+='<rect x="'+x+'" y="'+y+'" width="56" height="56" fill="var(--bg-code)" stroke="var(--border)"/>';
-        out+='<text x="'+(x+28)+'" y="'+(y+34)+'" text-anchor="middle" fill="var(--text)" font-family="JetBrains Mono, monospace" font-size="16">'+rows[r][c]+'</text>';
-      }
-    }
-    return out;
-  })()}
-</svg>`;
-
 const stackHeapSVG = `
 <svg class="diagram" viewBox="0 0 420 250" role="img" aria-label="Diagram comparing a stack frame to heap allocated memory, connected by a pointer">
   <text x="60" y="26" fill="var(--text-dim)" font-family="Space Grotesk, sans-serif" font-size="14" font-weight="600">Stack</text>
@@ -100,55 +80,6 @@ bind = SUPER, SPACE, exec, wofi --show drun`,'conf')}</code></pre>
       </table>
 
       <p>Nothing here was exotic once I saw it clearly — but it's a good reminder that a "dead key" can be dead for reasons stacked on top of each other, and fixing one layer won't always show its effect until the other layer is fixed too.</p>
-    `
-  },
-  {
-    slug:'cipher-scavenger-hunt',
-    title:'Designing a Cipher Scavenger Hunt for 42 Kocaeli\u2019s First Security Club Event',
-    category:'Cybersecurity',
-    date:'August 20, 2026',
-    readTime:'7 min read',
-    excerpt:'Five stations, four cipher families, and one very stubborn Polybius square — notes from building our club\u2019s first event from scratch.',
-    content:`
-      <p>This year I'm organizing 42 Kocaeli's first cybersecurity club, and I wanted our opening event to be something people did rather than something they sat through. That turned into <strong>Zincirleme Şifre Avı</strong> — a chained cipher hunt with five physical stations, where solving each cipher reveals the location of the next one.</p>
-
-      <h2>The five stations</h2>
-      <ol>
-        <li>An A1Z26 substitution warm-up, to get everyone thinking in codes.</li>
-        <li>Coordinates hidden inside a classic Polybius square.</li>
-        <li>A message encoded as raw ASCII decimal values.</li>
-        <li>A Caesar-shifted line hiding the final station's location.</li>
-        <li>A combined cipher at the last station leading to the prize.</li>
-      </ol>
-
-      <h2>Why these four cipher families</h2>
-      <p>I wanted a difficulty ramp that worked for first-years with zero cryptography background sitting next to people who'd already done a few CTFs. Every cipher we used is crackable by hand with patience, or in seconds with tools like dcode.fr or CyberChef — and I made that explicitly allowed, since the point was pattern recognition, not memorizing obscure algorithms.</p>
-
-      <table>
-        <tr><th>Cipher</th><th>Example</th><th>Cracks easily with</th></tr>
-        <tr><td>A1Z26</td><td>19-9-14-9-6</td><td>Pen and paper</td></tr>
-        <tr><td>Polybius square</td><td>24-15-34-11-15</td><td>The grid below</td></tr>
-        <tr><td>ASCII decimal</td><td>82 79 79 84</td><td>Any ASCII table</td></tr>
-        <tr><td>Caesar shift</td><td>Wklv lv wkh zdb</td><td>dcode.fr, CyberChef</td></tr>
-      </table>
-
-      <div class="diagram-wrap">
-        ${polybiusSVG}
-        <p class="diagram-cap">The classic 5×5 Polybius square, with I and J sharing a cell.</p>
-      </div>
-
-      <p>The Polybius station ended up being the one people got stuck on longest — not because it's hard, but because half the group had never heard of it and had to work out the grid logic from a single worked example on the card.</p>
-
-      <blockquote>Our club's tagline ended up being <code>$ i wish i meant to be a root</code> — half joke, half mission statement.</blockquote>
-
-      <h2>What I'd change next time</h2>
-      <ul>
-        <li>Space the stations out more evenly — two of them were solved almost simultaneously by different teams, which caused a bottleneck.</li>
-        <li>Print the cipher cards instead of laminating them; lamination made the ASCII station nearly unreadable in direct sunlight.</li>
-        <li>Add a soft hint system for teams stuck more than ten minutes, instead of leaving it fully open-ended.</li>
-      </ul>
-
-      <p>For a first event, it did exactly what I wanted: it got a room full of strangers leaning over the same piece of paper, arguing about a cipher together. Everything else is a solvable logistics problem.</p>
     `
   },
   {
