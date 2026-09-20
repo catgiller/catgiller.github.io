@@ -34,12 +34,6 @@ Posts live in `js/data.js` as objects in the `posts` array:
 
 The `content` field is raw HTML. Use `hl(\`code\`, 'cpp')` for syntax-highlighted code blocks and the built-in diagram SVGs (`polybiusSVG`, `stackHeapSVG`) where needed.
 
-## Running locally
+## Live site
 
-Open `index.html` directly, or serve the folder:
-
-```bash
-python3 -m http.server
-```
-
-Then visit http://localhost:8000.
+https://catgiller.github.io
