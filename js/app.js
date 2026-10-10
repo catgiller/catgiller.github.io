@@ -13,6 +13,25 @@ function copyCode(btn){
   }catch(e){}
 }
 
+window.scrollToSection = function(id){
+  const el = document.getElementById(id);
+  if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+};
+
+function buildTOC(){
+  const toc = document.getElementById('toc');
+  const headings = document.querySelectorAll('.prose h2, .prose h3');
+  if(!toc || headings.length === 0){ return; }
+  const items = [];
+  headings.forEach((h, i) => {
+    const id = 'sec-' + i;
+    h.id = id;
+    const lvl = h.tagName.toLowerCase() === 'h2' ? 2 : 3;
+    items.push('<li class="toc-l' + lvl + '"><a href="#' + id + '" onclick="scrollToSection(\'' + id + '\'); return false;">' + esc(h.textContent) + '</a></li>');
+  });
+  toc.innerHTML = '<h4>İçindekiler</h4><ul>' + items.join('') + '</ul>';
+}
+
 /* ---------------- helpers ---------------- */
 
 function findPost(slug){ return posts.find(p => p.slug === slug); }
@@ -120,6 +139,7 @@ function renderPost(slug){
   const prev = posts[idx-1];
   const next = posts[idx+1];
   document.getElementById('app').innerHTML = `
+    <div class="article-layout">
     <article class="article-wrap">
       <a href="#/blog" class="back-link">&lsaquo; Back to blog</a>
       <h1>${p.title}</h1>
@@ -134,7 +154,10 @@ function renderPost(slug){
         ${next ? `<a href="#/post/${next.slug}" class="next-cell"><div class="dir">Next &rsaquo;</div><div class="ptitle">${next.title}</div></a>` : '<div></div>'}
       </div>
     </article>
+    <aside class="toc" id="toc"></aside>
+    </div>
   `;
+  buildTOC();
 }
 
 function renderAbout(){
