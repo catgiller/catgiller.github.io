@@ -182,25 +182,7 @@ function renderProjects(){
   document.getElementById('app').innerHTML = `
     <section class="proj-grid">
       <h1 style="font-family:var(--font-display);font-weight:600;font-size:clamp(1.9rem,3vw + 1rem,2.6rem);margin-bottom:8px;letter-spacing:-0.01em;">Projects</h1>
-      <p style="color:var(--text-dim);margin-bottom:12px;">A few things I'm building or running outside of coursework.</p>
-
-      <div class="proj-card">
-        <span class="pill">Cybersecurity</span>
-        <h3>42 Kocaeli Cybersecurity Club</h3>
-        <p>Founded and organized the school's first cybersecurity club, including a five-station cipher scavenger hunt as our opening event, built around ciphers people could crack by hand or with tools like CyberChef.</p>
-      </div>
-
-      <div class="proj-card">
-        <span class="pill">Hackathon</span>
-        <h3>Earthquake Early-Warning Concept</h3>
-        <p>Exploring whether physical precursor signals from fault zones can be sensed faster than current seismology, using fiber-optic cable as a sensor network. In progress for the Greece–Türkiye 2026 hackathon.</p>
-      </div>
-
-      <div class="proj-card">
-        <span class="pill">C++</span>
-        <h3>42 Core Curriculum</h3>
-        <p>Working through 42's C++ modules, including the Zombie exercise series — memory management, pointer syntax, and constructor design, rebuilt as intuition rather than memorized rules.</p>
-      </div>
+      <p style="color:var(--text-dim);margin-bottom:12px;">Nothing here yet — projects are on hold for now.</p>
     </section>
   `;
 }
