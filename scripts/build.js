@@ -16,11 +16,12 @@ function escapeHtml(s){
     .replace(/>/g, '&gt;');
 }
 
-/* inline formatting: `code`, **bold** */
+/* inline formatting: `code`, **bold**, [link](url) */
 function inline(s){
   let out = escapeHtml(s);
   out = out.replace(/`([^`]+)`/g, (_, c) => '<code>' + c + '</code>');
   out = out.replace(/\*\*([^*]+)\*\*/g, (_, c) => '<strong>' + c + '</strong>');
+  out = out.replace(/\[([^\]]+)\]\(([^)\s]+)\)/g, (_, t, u) => '<a href="' + u + '" target="_blank" rel="noopener noreferrer">' + t + '</a>');
   return out;
 }
 

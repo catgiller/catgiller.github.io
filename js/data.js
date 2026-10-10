@@ -159,11 +159,6 @@ drwxr-xr-x 3 root root 4096 Sep 24 20:21 ..
 
 <p><code>cat /mnt/nfs/hello.txt</code> yazdığınızda arka planda şu zincir işler:</p>
 
-<div class="diagram-wrap">
-  ${nfsFlowSVG}
-  <p class="diagram-cap">İstemciden sunucuya uzanan yol: çağrı VFS'den NFS client'a, oradan RPC ile nfsd'ye ulaşır.</p>
-</div>
-
 <ol>
   <li><strong>Kullanıcı</strong> — <code>cat /mnt/nfs/hello.txt</code>; uzak dosya yerelmiş gibi okunur.</li>
   <li><strong>VFS</strong> — Linux'un soyut dosya katmanı; çağrıyı doğru dosya sistemine yönlendirir.</li>
@@ -207,14 +202,14 @@ drwxr-xr-x 3 root root 4096 Sep 24 20:21 ..
 <h2>Referanslar</h2>
 
 <ul>
-  <li>Oracle — Network File System</li>
-  <li>SciSpace — The Sun Workstation Architecture</li>
-  <li>Wikipedia — SUN Workstation</li>
-  <li>Wikipedia — Network File System</li>
-  <li>Oracle — NFS Documentation</li>
-  <li>Oracle Linux — NFS Versions Concept</li>
-  <li>Kali — nfs-utils</li>
-  <li>Red Hat — NFS Server Configuration: /etc/exports</li>
+  <li><a href="https://docs.oracle.com/en/cloud/paas/app-container-cloud/dvcjv/network-file-system.html" target="_blank" rel="noopener noreferrer">Oracle — Network File System</a></li>
+  <li><a href="https://scispace.com/pdf/the-sun-workstation-architecture-3xylc87vfv.pdf" target="_blank" rel="noopener noreferrer">SciSpace — The Sun Workstation Architecture</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/SUN_workstation" target="_blank" rel="noopener noreferrer">Wikipedia — SUN Workstation</a></li>
+  <li><a href="https://en.wikipedia.org/wiki/Network_File_System" target="_blank" rel="noopener noreferrer">Wikipedia — Network File System</a></li>
+  <li><a href="https://docs.oracle.com/cd/E19253-01/816-4555/6maoqui94/index.html" target="_blank" rel="noopener noreferrer">Oracle — NFS Documentation</a></li>
+  <li><a href="https://docs.oracle.com/en/operating-systems/oracle-linux/8/nfs/nfs-versions_concept.html" target="_blank" rel="noopener noreferrer">Oracle Linux — NFS Versions Concept</a></li>
+  <li><a href="https://www.kali.org/tools/nfs-utils/" target="_blank" rel="noopener noreferrer">Kali — nfs-utils</a></li>
+  <li><a href="https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/deployment_guide/s1-nfs-server-config-exports" target="_blank" rel="noopener noreferrer">Red Hat — NFS Server Configuration: /etc/exports</a></li>
 </ul>
     `
   }

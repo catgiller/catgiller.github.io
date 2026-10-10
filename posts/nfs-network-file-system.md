@@ -149,10 +149,6 @@ Sonuç: yazma izni yok. UID/GID'ler iki tarafta da farklı olduğu için kullan�
 
 `cat /mnt/nfs/hello.txt` yazdığınızda arka planda şu zincir işler:
 
-:::diagram nfsFlowSVG
-İstemciden sunucuya uzanan yol: çağrı VFS'den NFS client'a, oradan RPC ile nfsd'ye ulaşır.
-:::
-
 1. **Kullanıcı** — `cat /mnt/nfs/hello.txt`; uzak dosya yerelmiş gibi okunur.
 2. **VFS** — Linux'un soyut dosya katmanı; çağrıyı doğru dosya sistemine yönlendirir.
 3. **NFS client** — İsteği NFS protokolüne çevirir.
@@ -191,11 +187,11 @@ NFS'in kalbi tek bir fikirde yatıyor: **dosya nerede durursa dursun, erişim ye
 
 ## Referanslar
 
-- Oracle — Network File System
-- SciSpace — The Sun Workstation Architecture
-- Wikipedia — SUN Workstation
-- Wikipedia — Network File System
-- Oracle — NFS Documentation
-- Oracle Linux — NFS Versions Concept
-- Kali — nfs-utils
-- Red Hat — NFS Server Configuration: /etc/exports
+- [Oracle — Network File System](https://docs.oracle.com/en/cloud/paas/app-container-cloud/dvcjv/network-file-system.html)
+- [SciSpace — The Sun Workstation Architecture](https://scispace.com/pdf/the-sun-workstation-architecture-3xylc87vfv.pdf)
+- [Wikipedia — SUN Workstation](https://en.wikipedia.org/wiki/SUN_workstation)
+- [Wikipedia — Network File System](https://en.wikipedia.org/wiki/Network_File_System)
+- [Oracle — NFS Documentation](https://docs.oracle.com/cd/E19253-01/816-4555/6maoqui94/index.html)
+- [Oracle Linux — NFS Versions Concept](https://docs.oracle.com/en/operating-systems/oracle-linux/8/nfs/nfs-versions_concept.html)
+- [Kali — nfs-utils](https://www.kali.org/tools/nfs-utils/)
+- [Red Hat — NFS Server Configuration: /etc/exports](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/5/html/deployment_guide/s1-nfs-server-config-exports)
